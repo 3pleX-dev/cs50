@@ -27,9 +27,11 @@ int main(int argc, char *argv[])
   }
 
   char *plaintext = get_string("plaintext:  ");
-  char ciphertext[strlen(plaintext) + 1]; // not adding a space for null terminator here will cause progam to keep printing garbage values until it reaches a 0 byte in memory
+  int textlen = strlen(plaintext);
+  char ciphertext[textlen + 1];
+  ciphertext[textlen] = '\0'; // not adding a space for null terminator here will cause progam to keep printing garbage values until it reaches a 0 byte in memory
 
-  for (int i = 0; i < strlen(plaintext); i++) {
+  for (int i = 0; i < textlen; i++) {
     int ascii = plaintext[i];
 
     if (ascii >= 65 && ascii <= 90)
