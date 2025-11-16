@@ -33,7 +33,7 @@ int get_score(int *arr, char *word)
   for (int i = 0; i < strlen(word); i++)
   {
     int ascii = word[i];
-    if (ascii >= 65 && ascii <= 91)
+    if (ascii >= 65 && ascii <= 90)
     {
       score += arr[ascii - 65];
     } else if (ascii >= 97 && ascii <= 122) {
